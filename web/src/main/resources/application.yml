@@ -1,0 +1,41 @@
+spring:
+  redis:
+    host: 192.168.199.245
+    port: 6379
+#    password: 123456
+    database: 0
+    timeout: 20000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
+  datasource:
+    url: jdbc:mysql://192.168.199.245:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: wu123456
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+rocketmq:
+  name-server: 192.168.199.245:9876
+  producer:
+    group: demo
+    retry-times-when-send-failed: 3
+    retry-times-when-send-async-failed: 3
+    send-message-timeout: 15000
+
+  consumer:
+    group: demo
+    topic: demo
+
+elasticsearch:
+  host: 192.168.199.245
+  port: 9200
