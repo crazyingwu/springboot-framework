@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
 
-@Configuration
+//@Configuration
 public class RocketMqConfiguration {
 
     @Resource
